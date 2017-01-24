@@ -4,11 +4,16 @@
   margin: 2em;
 }
 
+#tweet-container:hover {
+  border-color: #666666;
+}
+
 article header {
   background-color: #eee;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   height: 70px;
+  opacity: .5;
 }
 
 article img {
@@ -37,10 +42,15 @@ article footer {
   border-top: solid 1px #eee;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  height: 30px;
+  height: 40px;
 }
 
 .date {
-  line-height: 2em;
+  line-height: 2.5em;
+  margin: 10px;
+}
+
+.icons {
+  float: right;
   margin: 10px;
 }
