@@ -1,0 +1,46 @@
+#tweet-container {
+  border-radius: 10px;
+  border: solid 1px #d9d9d9;
+  margin: 2em;
+}
+
+article header {
+  background-color: #eee;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 70px;
+}
+
+article img {
+  border-radius: 10px;
+  margin: 10px;
+  float: left;
+}
+
+.full-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 2em;
+}
+
+.id-name {
+float: right;
+margin-top: 15px;
+margin-right: 10px;
+}
+
+article p {
+  padding: 1em;
+}
+
+article footer {
+  border-top: solid 1px #eee;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 30px;
+}
+
+.date {
+  line-height: 2em;
+  margin: 10px;
+}

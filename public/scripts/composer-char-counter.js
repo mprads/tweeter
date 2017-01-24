@@ -1,12 +1,12 @@
-$(document).ready(function () {
-  $('.new-tweet textarea').on('keyup', function () {
-    let characters = $(this).val().length;
+$(document).ready(() => {
+  $(".new-tweet textarea").on("keyup", (event) => {
+    let characters = $(event.currentTarget).val().length;
     let remChara = 140 - characters;
-    $(this).closest('form').find('.counter').text(remChara);
+    $(event.currentTarget).closest("form").find(".counter").text(remChara);
     if (remChara < 0) {
-      $(this).closest('form').find('.counter').css('color', 'red');
+      $(event.currentTarget).closest("form").find(".counter").css("color", "red");
     } else {
-      $(this).closest('form').find('.counter').css('color', 'black');
+      $(event.currentTarget).closest("form").find(".counter").css("color", "244751");
     }
   });
 });
