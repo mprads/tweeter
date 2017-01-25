@@ -10,10 +10,8 @@ $(document).ready(() => {
   function createHeader (tweetObj) {
     const $header = $("<header>");
     const $avatar = $("<img>").attr("src", tweetObj.user.avatars.small);
-    const $userName = $("<span>").text(tweetObj.user.name);
-    const $handle = $("<span>").text(tweetObj.user.handle);
-    $userName.addClass("full-name");
-    $handle.addClass("id-name");
+    const $userName = $("<span>").text(tweetObj.user.name).addClass("full-name");
+    const $handle = $("<span>").text(tweetObj.user.handle).addClass("id-name");
     $header.append($userName, $avatar, $handle);
     return $header;
   }
@@ -44,15 +42,11 @@ $(document).ready(() => {
 
   function createFooter (tweetObj) {
     const $footer = $("<footer>");
-    const $flag = $("<i>");
-    const $retweet = $("<i>");
-    const $heart = $("<i>");
-    let $icons = $("<span>");
+    const $flag = $("<i>").addClass("fa fa-flag").attr("aria-hidden", true);
+    const $retweet = $("<i>").addClass("fa fa-retweet").attr("aria-hidden", true);
+    const $heart = $("<i>").addClass("fa fa-heart").attr("aria-hidden", true);
+    let $icons = $("<span>").addClass("icons");
     let $dates = $("<span>").text(dateCreated(tweetObj.created_at)).addClass("date");
-    $flag.addClass("fa fa-flag").attr("aria-hidden", true);
-    $retweet.addClass("fa fa-retweet").attr("aria-hidden", true);
-    $heart.addClass("fa fa-heart").attr("aria-hidden", true);
-    $icons.addClass("icons");
     $icons.append($flag, " ", $retweet, " ", $heart);
     $footer.append($dates, $icons);
     return $footer;
@@ -67,8 +61,8 @@ $(document).ready(() => {
     return $tweet;
   }
   function renderTweets(tweets) {
-    tweets.forEach((obj) => {
-      $("#tweet-container").append(createTweetElement(obj));
+    tweets.forEach(tweet => {
+      $("#tweet-container").append(createTweetElement(tweet));
     });
   }
   renderTweets(data);
