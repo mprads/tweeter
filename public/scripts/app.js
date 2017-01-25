@@ -62,10 +62,21 @@ $(document).ready(() => {
   }
   function renderTweets(tweets) {
     tweets.forEach(tweet => {
-      $("#tweet-container").append(createTweetElement(tweet));
+      $("#tweet-container").prepend(createTweetElement(tweet));
     });
   }
+
+  $("form").on("submit", (event) => {
+    event.preventDefault();
+    const data = $(event.currentTarget).serialize();
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: data
+    });
+  });
   renderTweets(data);
+
 });
 
 
