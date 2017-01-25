@@ -80,6 +80,8 @@ $(() => {
       url: "/tweets",
       data: data
       }).then(() => {
+        $("textarea").val("");
+        $(".counter").text("140")
         $("tweet-container").empty();
         loadTweet();
     });
