@@ -24,7 +24,7 @@
   margin-bottom: 0px;
 }
 
-button {
+#nav-bar button {
   border-radius: 10px;
   border: solid 2px black;
   height: 70px;
@@ -35,10 +35,14 @@ button {
   background-color: white;
   font-size: 1.5em;
   color: #00a087;
-  opacity: .75;
+  opacity: .8;
 }
 
-button:hover {
+#nav-bar button:focus {
+  outline: none;
+}
+
+#nav-bar button:hover {
   opacity: 1;
   color: black;
 }

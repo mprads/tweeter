@@ -7,6 +7,11 @@ $(() => {
     $(event.currentTarget).find("header").css("opacity", ".5");
   });
 
+  $( "button" ).click(() => {
+  $( ".new-tweet" ).slideToggle( "slow", () => {
+  });
+});
+
   function createHeader (tweetObj) {
     const $header = $("<header>");
     const $avatar = $("<img>").attr("src", tweetObj.user.avatars.small);
