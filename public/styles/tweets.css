@@ -1,11 +1,12 @@
-#tweet-container {
+#tweet-container article{
   border-radius: 10px;
   border: solid 1px #d9d9d9;
   margin: 2em;
 }
 
-#tweet-container:hover {
-  border-color: #666666;
+#tweet-container article:hover {
+  border-radius: 10px;
+  border: solid 1px #666666;
 }
 
 article header {

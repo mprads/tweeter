@@ -6,7 +6,7 @@ $(document).ready(() => {
     if (remChara < 0) {
       $(event.currentTarget).closest("form").find(".counter").css("color", "red");
     } else {
-      $(event.currentTarget).closest("form").find(".counter").css("color", "244751");
+      $(event.currentTarget).closest("form").find(".counter").css("color", "black");
     }
   });
 });
