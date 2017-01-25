@@ -37,6 +37,7 @@ margin-right: 10px;
 
 article p {
   padding: 1em;
+  word-wrap: break-word;
 }
 
 article footer {

@@ -68,6 +68,12 @@ $(document).ready(() => {
 
   $("form").on("submit", (event) => {
     event.preventDefault();
+    if ($("textarea").val().length > 140) {
+      alert("Please only enter 140 characters");
+    }
+    if (!$.trim($("textarea").val())) {
+      alert("Sorry no empty tweets");
+    }
     const data = $(event.currentTarget).serialize();
     $.ajax({
       method: "POST",
