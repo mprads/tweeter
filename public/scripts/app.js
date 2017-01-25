@@ -24,7 +24,7 @@ $(document).ready(function () {
   }
 
  function dateCreated (ms){
-  const miliSecs = Date.now() - tweetData.created_at;
+  const miliSecs = Date.now() - ms;
   if (miliSecs >= 86400000) {
     days = (miliSecs / 86400000);
     return (Math.floor(days) + " days ago");
