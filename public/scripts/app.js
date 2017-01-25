@@ -7,10 +7,14 @@ $(() => {
     $(event.currentTarget).find("header").css("opacity", ".5");
   });
 
-  $( "button" ).click(() => {
-  $( ".new-tweet" ).slideToggle( "slow", () => {
+  $("button").click(() => {
+    if ($(".new-tweet").is(":animated")) {
+      return false;
+    }
+    $(".new-tweet").slideToggle("slow", () => {
+      $( ".new-tweet textarea" ).focus();
+    });
   });
-});
 
   function createHeader (tweetObj) {
     const $header = $("<header>");
@@ -26,23 +30,23 @@ $(() => {
     return $content;
   }
 
- function dateCreated (ms){
-  const miliSecs = Date.now() - ms;
-  if (miliSecs >= 86400000) {
-    days = (miliSecs / 86400000);
-    return (Math.floor(days) + " days ago");
-  }
-  if (miliSecs >= 3600000) {
-    hours = (miliSecs / 3600000);
-    return (Math.floor(hours) + " hours ago");
-  }
-  if (miliSecs >= 60000) {
-    minutes = (miliSecs / 60000);
-    return (Math.floor(minutes) + " minutes ago");
-  } else {
-    seconds = (miliSecs / 1000) ;
-    return (Math.floor(seconds)+ " seconds ago");
-  }
+  function dateCreated (ms){
+    const miliSecs = Date.now() - ms;
+    if (miliSecs >= 86400000) {
+      days = (miliSecs / 86400000);
+      return (Math.floor(days) + " days ago");
+    }
+    if (miliSecs >= 3600000) {
+      hours = (miliSecs / 3600000);
+      return (Math.floor(hours) + " hours ago");
+    }
+    if (miliSecs >= 60000) {
+      minutes = (miliSecs / 60000);
+      return (Math.floor(minutes) + " minutes ago");
+    } else {
+      seconds = (miliSecs / 1000) ;
+      return (Math.floor(seconds) + " seconds ago");
+    }
  }
 
   function createFooter (tweetObj) {
@@ -84,10 +88,10 @@ $(() => {
       method: "POST",
       url: "/tweets",
       data: data
-      }).then(() => {
-        $("textarea").val("");
-        $(".counter").text("140")
-        loadTweet();
+    }).then(() => {
+      $("textarea").val("");
+      $(".counter").text("140");
+      loadTweet();
     });
   });
 
