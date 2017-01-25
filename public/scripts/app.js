@@ -82,7 +82,6 @@ $(() => {
       }).then(() => {
         $("textarea").val("");
         $(".counter").text("140")
-        $("tweet-container").empty();
         loadTweet();
     });
   });
@@ -92,6 +91,7 @@ $(() => {
       method: "GET",
       url: "/tweets"
     }).then((respose) => {
+        $("#tweet-container").empty();
         renderTweets(respose);
     });
   }
