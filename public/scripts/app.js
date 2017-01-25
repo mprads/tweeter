@@ -75,8 +75,17 @@ $(document).ready(() => {
       data: data
     });
   });
-  renderTweets(data);
 
+  function loadTweet () {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+      success: (respose) =>{
+        renderTweets(respose);
+      }
+    });
+  }
+  loadTweet();
 });
 
 
