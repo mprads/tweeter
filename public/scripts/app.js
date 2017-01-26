@@ -3,8 +3,10 @@ $(() => {
 
   $("#tweet-container").on("mouseenter", "article", (event) => {
     $(event.currentTarget).find("header").css("opacity", "1");
+    $(event.currentTarget).find(".icons").css("display", "inline");
   }).on("mouseleave", "article", (event) => {
     $(event.currentTarget).find("header").css("opacity", ".5");
+    $(event.currentTarget).find(".icons").css("display", "none");
   });
 
   $("button").click(() => {
@@ -30,23 +32,31 @@ $(() => {
     return $content;
   }
 
-  function dateCreated (ms){
+  function dateCreated (ms) {
     const miliSecs = Date.now() - ms;
     if (miliSecs >= 86400000) {
       days = (miliSecs / 86400000);
+      if (Math.floor(days) === 1) {
+        return (Math.floor(days) + " day ago");
+      }
       return (Math.floor(days) + " days ago");
     }
     if (miliSecs >= 3600000) {
       hours = (miliSecs / 3600000);
+      if (Math.floor(hours) === 1) {
+        return (Math.floor(hours) + " hour ago");
+      }
       return (Math.floor(hours) + " hours ago");
     }
     if (miliSecs >= 60000) {
       minutes = (miliSecs / 60000);
+      if (Math.floor(minutes) === 1) {
+        return (Math.floor(minutes) + " minute ago");
+      }
       return (Math.floor(minutes) + " minutes ago");
-    } else {
-      seconds = (miliSecs / 1000) ;
-      return (Math.floor(seconds) + " seconds ago");
     }
+    seconds = (miliSecs / 1000) ;
+    return (Math.floor(seconds) + " seconds ago");
   }
 
   function createFooter (tweetObj) {
@@ -82,7 +92,8 @@ $(() => {
       url: "/tweets"
     }).then((respose) => {
       $("#tweet-container").empty();
-      renderTweets(respose);
+      renderTweets(respose)
+      $("#tweet-container").trigger("tweetsActive");
     });
   }
 
@@ -94,6 +105,7 @@ $(() => {
     if (!$.trim($("textarea").val())) {
       alert("Sorry no empty tweets");
     }
+
     const data = $(event.currentTarget).serialize();
     $.ajax({
       method: "POST",

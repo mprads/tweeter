@@ -55,7 +55,18 @@ article footer {
 .icons {
   float: right;
   margin: 10px;
+  display: none;
+  color: #00a087;
 }
+
 .redHeart {
   color: red;
+}
+
+.blueRetweet {
+  color: blue;
+}
+
+.orangeFlag{
+  color: orange;
 }

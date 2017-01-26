@@ -16,6 +16,14 @@
   width: 80px;
 }
 
+#nav-bar .gif {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  left: 32px;
+  display: none;
+}
+
 #nav-bar .header {
   float: left;
   font-size: 2em;
