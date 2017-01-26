@@ -47,7 +47,7 @@ $(() => {
       seconds = (miliSecs / 1000) ;
       return (Math.floor(seconds) + " seconds ago");
     }
- }
+  }
 
   function createFooter (tweetObj) {
     const $footer = $("<footer>");
@@ -69,9 +69,20 @@ $(() => {
     $tweet.append($header, $content, $footer);
     return $tweet;
   }
+
   function renderTweets(tweets) {
     tweets.forEach(tweet => {
       $("#tweet-container").prepend(createTweetElement(tweet));
+    });
+  }
+
+  function loadTweet () {
+    $.ajax({
+      method: "GET",
+      url: "/tweets"
+    }).then((respose) => {
+      $("#tweet-container").empty();
+      renderTweets(respose);
     });
   }
 
@@ -94,15 +105,5 @@ $(() => {
       loadTweet();
     });
   });
-
-  function loadTweet () {
-    $.ajax({
-      method: "GET",
-      url: "/tweets"
-    }).then((respose) => {
-        $("#tweet-container").empty();
-        renderTweets(respose);
-    });
-  }
   loadTweet();
 });
