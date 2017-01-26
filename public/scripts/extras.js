@@ -1,5 +1,5 @@
 $(() => {
-  $("#tweet-container").on("tweetsActive", () =>{
+  $("#tweetContainer").on("tweetsActive", () =>{
     $(".fa.fa-heart").on("click", (event) => {
       ($(event.currentTarget).toggleClass("redHeart"));
     });

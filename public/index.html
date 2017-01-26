@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -23,7 +24,7 @@
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
   <body>
-    <nav id="nav-bar">
+    <nav id="navBar">
       <img class="logo" src="/images/bird.png">
       <img class="gif" src="/images/hummingbird.gif">
       <span class="header">Tweeter</span>
@@ -34,7 +35,7 @@
       </button>
     </nav>
     <main class="container">
-      <section class="new-tweet">
+      <section class="newTweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
@@ -42,7 +43,7 @@
           <span class="counter">140</span>
         </form>
       </section>
-      <section id="tweet-container">
+      <section id="tweetContainer">
       </section>
     </main>
   </body>

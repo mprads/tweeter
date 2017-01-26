@@ -1,7 +1,7 @@
 
 $(() => {
 
-  $("#tweet-container").on("mouseenter", "article", (event) => {
+  $("#tweetContainer").on("mouseenter", "article", (event) => {
     $(event.currentTarget).find("header").css("opacity", "1");
     $(event.currentTarget).find(".icons").css("display", "inline");
   }).on("mouseleave", "article", (event) => {
@@ -10,19 +10,19 @@ $(() => {
   });
 
   $("button").click(() => {
-    if ($(".new-tweet").is(":animated")) {
+    if ($(".newTweet").is(":animated")) {
       return false;
     }
-    $(".new-tweet").slideToggle("slow", () => {
-      $( ".new-tweet textarea" ).focus();
+    $(".newTweet").slideToggle("slow", () => {
+      $( ".newTweet textarea" ).focus();
     });
   });
 
   function createHeader (tweetObj) {
     const $header = $("<header>");
     const $avatar = $("<img>").attr("src", tweetObj.user.avatars.small);
-    const $userName = $("<span>").text(tweetObj.user.name).addClass("full-name");
-    const $handle = $("<span>").text(tweetObj.user.handle).addClass("id-name");
+    const $userName = $("<span>").text(tweetObj.user.name).addClass("fullName");
+    const $handle = $("<span>").text(tweetObj.user.handle).addClass("idName");
     $header.append($userName, $avatar, $handle);
     return $header;
   }
@@ -82,7 +82,7 @@ $(() => {
 
   function renderTweets(tweets) {
     tweets.forEach(tweet => {
-      $("#tweet-container").prepend(createTweetElement(tweet));
+      $("#tweetContainer").prepend(createTweetElement(tweet));
     });
   }
 
@@ -91,9 +91,9 @@ $(() => {
       method: "GET",
       url: "/tweets"
     }).then((respose) => {
-      $("#tweet-container").empty();
+      $("#tweetContainer").empty();
       renderTweets(respose)
-      $("#tweet-container").trigger("tweetsActive");
+      $("#tweetContainer").trigger("tweetsActive");
     });
   }
 

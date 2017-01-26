@@ -1,4 +1,4 @@
-.new-tweet {
+.newTweet {
   border-radius: 7px;
   border: solid 1px #d9d9d9;
   margin: 0 2em 2em 2em;
@@ -7,7 +7,7 @@
   display: none;
 }
 
-.new-tweet h2 {
+.newTweet h2 {
   border-bottom: solid 1px;
   text-align: left;
   margin-top: 0px;
@@ -18,7 +18,16 @@
   margin-top: 5px;
 }
 
-.new-tweet textarea {
+.newTweet textarea {
   width: 100%;
   padding: .5em;
+}
+
+
+@media (max-width: 450px) {
+  .newTweet {
+    width: 100%;
+    margin:0px;
+  }
+
 }

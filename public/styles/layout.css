@@ -10,9 +10,19 @@ body {
   color: #244751;
   background-color: #eee;
   font-family: "Roboto Condensed", sans-serif;
+  min-width: 405px;
 }
 
 .container {
   background-color: white;
   width: 450px;
   margin: 80px auto 0px;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    margin: 0px;
+  }
+
+}

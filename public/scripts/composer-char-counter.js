@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $(".new-tweet textarea").on("keyup", (event) => {
+  $(".newTweet textarea").on("keyup", (event) => {
 
     let characters = $(event.currentTarget).val().length;
     let remChara = 140 - characters;

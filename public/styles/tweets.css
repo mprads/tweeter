@@ -1,10 +1,10 @@
-#tweet-container article {
+#tweetContainer article {
   border-radius: 10px;
   border: solid 1px #d9d9d9;
   margin: 2em;
 }
 
-#tweet-container article:hover {
+#tweetContainer article:hover {
   border-radius: 10px;
   border: solid 1px #666666;
 }
@@ -23,13 +23,13 @@ article img {
   float: left;
 }
 
-.full-name {
+.fullName {
   font-size: 1.5em;
   font-weight: bold;
   line-height: 2em;
 }
 
-.id-name {
+.idName {
 float: right;
 margin-top: 15px;
 margin-right: 10px;
@@ -69,4 +69,20 @@ article footer {
 
 .orangeFlag{
   color: orange;
+}
+
+@media (max-width: 450px) {
+  .fullName {
+    width: 75%;
+    margin: 0px;
+  }
+  .idName {
+    float: none;
+    margin: 0px;
+  }
+  article img {
+    width: 15%;
+    height: 80%;
+    margin: 0px;
+  }
 }

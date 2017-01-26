@@ -1,4 +1,4 @@
-#nav-bar {
+#navBar {
   position: fixed;
   background-color: #00a087;
   color: #e8fdff;
@@ -10,13 +10,13 @@
   z-index: 1;
 }
 
-#nav-bar .logo {
+#navBar .logo {
   float: left;
   height: 80px;
   width: 80px;
 }
 
-#nav-bar .gif {
+#navBar .gif {
   height: 80px;
   width: 80px;
   position: absolute;
@@ -24,7 +24,7 @@
   display: none;
 }
 
-#nav-bar .header {
+#navBar .header {
   float: left;
   font-size: 2em;
   line-height: 80px;
@@ -32,7 +32,7 @@
   margin-bottom: 0px;
 }
 
-#nav-bar button {
+#navBar button {
   border-radius: 10px;
   border: solid 2px black;
   height: 70px;
@@ -46,15 +46,35 @@
   opacity: .8;
 }
 
-#nav-bar button:focus {
+#navBar button:focus {
   outline: none;
 }
 
-#nav-bar button:hover {
+#navBar button:hover {
   opacity: 1;
   color: black;
 }
 
 .compose {
   margin: 0px;
+}
+
+
+@media (max-width: 500px) {
+  #navBar {
+    width: 100%;
+  }
+  #navBar .logo {
+    width: 25%;
+    margin: 0px;
+  }
+  #navBar .header {
+    width: 25%;
+    margin: 0px;
+
+  }
+  #navBar button {
+    width: 50%
+    margin: 0px;
+  }
 }
