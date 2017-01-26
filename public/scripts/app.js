@@ -100,10 +100,12 @@ $(() => {
   $("form").on("submit", (event) => {
     event.preventDefault();
     if ($("textarea").val().length > 140) {
-      alert("Please only enter 140 characters");
+      sweetAlert("Calm Down", "Please only enter 140 characters", "error");
+      return;
     }
     if (!$.trim($("textarea").val())) {
-      alert("Sorry no empty tweets");
+      sweetAlert("Hey You!", "No empty tweets","error");
+      return;
     }
 
     const data = $(event.currentTarget).serialize();
