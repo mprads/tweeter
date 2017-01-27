@@ -84,4 +84,9 @@ margin-right: 10px;
     float: none;
     margin: 0;
   }
+
+  #tweetContainer article {
+    margin-top: 80px;
+  }
+
 }

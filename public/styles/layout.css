@@ -20,6 +20,9 @@ html {
 }
 
 @media (max-width: 768px) {
+  body {
+    width: 100%;
+  }
   .container {
     margin: 0;
     width: 100%;

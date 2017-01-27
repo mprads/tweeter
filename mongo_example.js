@@ -1,7 +1,7 @@
 "use strict";
 
 const MongoClient = require("mongodb").MongoClient;
-const MONGODB_URI = "mongodb://localhost:27017/tweeter";
+const MONGODB_URI = "mongodb://tweeter:tweeter@ds133279.mlab.com:33279/tweeter";
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
