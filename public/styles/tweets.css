@@ -68,10 +68,10 @@ margin-right: 10px;
   color: red;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   article img {
     height: 80%;
-    margin: 0px;
+    margin: 0;
     width: 15%;
   }
 

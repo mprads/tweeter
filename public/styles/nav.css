@@ -59,7 +59,7 @@
   width: 80px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   #navBar {
     width: 100%;
   }

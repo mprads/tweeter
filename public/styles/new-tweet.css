@@ -23,7 +23,7 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .newTweet {
     margin: 0;
     width: 100%;
