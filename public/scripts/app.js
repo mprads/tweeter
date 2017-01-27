@@ -93,7 +93,7 @@ $(() => {
     }).then((respose) => {
       $("#tweetContainer").empty();
       renderTweets(respose)
-      $("#tweetContainer").trigger("tweetsActive");
+      $("#tweetContainer").trigger("tweetsActive")
     });
   }
 
