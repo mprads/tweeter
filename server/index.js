@@ -2,12 +2,14 @@
 
 // Basic express setup:
 
-const PORT          = 8080;
+const PORT          = process.env.PORT || 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
 const MongoClient = require("mongodb").MongoClient;
-const MONGODB_URI = "mongodb://localhost:27017/tweeter";
+require('dotenv').config();
+// const MONGODB_URI = "heroku config:set MONGODB_URI=mongodb://ds133279.mlab.com:33279/tweeter";
+const MONGODB_URI = process.env.MONGODB_URI;
 const makeDataHelpers = require("./lib/data-helpers.js");
 
 app.use(bodyParser.urlencoded({ extended: true }));
