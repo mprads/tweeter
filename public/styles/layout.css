@@ -1,3 +1,11 @@
+
+body {
+  background-color: #eee;
+  color: #244751;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -5,24 +13,16 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  margin: 0;
-  color: #244751;
-  background-color: #eee;
-  font-family: "Roboto Condensed", sans-serif;
-  min-width: 405px;
-}
-
 .container {
   background-color: white;
+  margin: 80px auto 0;
   width: 450px;
-  margin: 80px auto 0px;
 }
 
-@media (max-width: 500px) {
+@media (min-width: 768px) {
   .container {
+    margin: 0;
     width: 100%;
-    margin: 0px;
   }
 
 }

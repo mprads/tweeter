@@ -1,14 +1,9 @@
-#tweetContainer article {
-  border-radius: 10px;
-  border: solid 1px #d9d9d9;
-  margin: 2em;
+article footer {
+  border-top: solid 1px #eee;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 40px;
 }
-
-#tweetContainer article:hover {
-  border-radius: 10px;
-  border: solid 1px #666666;
-}
-
 article header {
   background-color: #eee;
   border-top-right-radius: 10px;
@@ -16,11 +11,34 @@ article header {
   height: 70px;
   opacity: .5;
 }
-
 article img {
   border-radius: 10px;
   margin: 10px;
   float: left;
+}
+article p {
+  padding: 1em;
+  word-wrap: break-word;
+}
+
+#tweetContainer article {
+  border: solid 1px #d9d9d9;
+  border-radius: 10px;
+  margin: 2em;
+}
+
+#tweetContainer article:hover {
+  border: solid 1px #666666;
+  border-radius: 10px;
+}
+
+.blueRetweet {
+  color: blue;
+}
+
+.date {
+  line-height: 2.5em;
+  margin: 10px;
 }
 
 .fullName {
@@ -29,60 +47,41 @@ article img {
   line-height: 2em;
 }
 
+.icons {
+  color: #00a087;
+  display: none;
+  float: right;
+  margin: 10px;
+}
+
 .idName {
 float: right;
 margin-top: 15px;
 margin-right: 10px;
 }
 
-article p {
-  padding: 1em;
-  word-wrap: break-word;
-}
-
-article footer {
-  border-top: solid 1px #eee;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  height: 40px;
-}
-
-.date {
-  line-height: 2.5em;
-  margin: 10px;
-}
-
-.icons {
-  float: right;
-  margin: 10px;
-  display: none;
-  color: #00a087;
+.orangeFlag{
+  color: orange;
 }
 
 .redHeart {
   color: red;
 }
 
-.blueRetweet {
-  color: blue;
-}
-
-.orangeFlag{
-  color: orange;
-}
-
-@media (max-width: 450px) {
-  .fullName {
-    width: 75%;
-    margin: 0px;
-  }
-  .idName {
-    float: none;
-    margin: 0px;
-  }
+@media (min-width: 768px) {
   article img {
-    width: 15%;
     height: 80%;
     margin: 0px;
+    width: 15%;
+  }
+
+  .fullName {
+    margin: 0;
+    width: 75%;
+  }
+
+  .idName {
+    float: none;
+    margin: 0;
   }
 }
